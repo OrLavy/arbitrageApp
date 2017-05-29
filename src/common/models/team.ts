@@ -1,9 +1,7 @@
 export class Team {
-    public name : string;
-    public imagUrl : string;
+    public displayName : string;
 
-    constructor(name : string, imagUrl : string ){
-        this.name = name;
-        this.imagUrl = imagUrl;
+    constructor(displayName : string){
+        this.displayName = displayName;
     }
 }
