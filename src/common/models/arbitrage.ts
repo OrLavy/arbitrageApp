@@ -9,13 +9,13 @@ export class Arbitrage {
 
     public gameId : number;
     public homeRatio : number;
-    public drawRation : number;
+    public drawRatio : number;
     public awayRatio : number;
 
     public homeBetPercent : number;
     public drawBetPercent : number;
     public awayBetPercent : number;
-    public profitPervent : number;
+    public profitPercent : number;
 
     public isActive     : boolean;
     public findTime     : Date;
@@ -23,7 +23,7 @@ export class Arbitrage {
 
     public homeRatioSite : Site;
     public drawRatioSite : Site;
-    public AwayRatioSite : Site;
+    public awayRatioSite : Site;
     public game : Game;
 
     constructor(){
