@@ -1,12 +1,23 @@
-
 <ion-card>
   <ion-card-content>
-    <ion-card-title>
-      {{arbitrage.teamA.name}} <b>vs</b> {{arbitrage.teamB.name}}
-    </ion-card-title>
-    <p>
-        {{arbitrage.betA.site.name}} - {{arbitrage.betA.ratio}} | {{arbitrage.betB.site.name}} - {{arbitrage.betB.ratio}} 
-    </p>
+    <ion-card-header color='dark'>
+      <div class="row">
+        <td class="col col-33" color='dark'>{{arbitrage.game.homeTeam.displayName}}</td>
+        <td class="col col-33"><b>vs</b></td>
+        <td class="col col-33">{{arbitrage.game.awayTeam.displayName}}</td>
+      </div>
+    </ion-card-header>
+    
+    <div class="row">
+      <td class="col col-33">Home</td>
+      <td class="col col-33">Draw</td>
+      <td class="col col-33">Away</td>
+    </div>
+    <div class="row">
+      <th class="col col-33">{{arbitrage.homeRatio}}</th>
+      <th class="col col-33">{{arbitrage.drawRatio}}</th>
+      <th class="col col-33">{{arbitrage.awayRatio}}</th>
+    </div>
+
   </ion-card-content>
 </ion-card>
-

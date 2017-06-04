@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy, SimpleChanges } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Arbitrage } from "../models/arbitrage";
+import {BehaviorSubject} from 'rxjs';
 
 /**
  * Generated class for the ArbitrageCard page.
@@ -11,10 +12,14 @@ import { Arbitrage } from "../models/arbitrage";
 @IonicPage()
 @Component({
   selector: 'arbitrage-card',
-  inputs : ['arbitrage'],
+  inputs : ['data'],
   templateUrl: 'arbitrage-card.html',
+  changeDetection : ChangeDetectionStrategy.OnPush
 })
 export class ArbitrageCard {
+
+  private _data = new BehaviorSubject<Arbitrage>(null);
+
 
   public arbitrage : Arbitrage;
   public name : string;
@@ -22,9 +27,21 @@ export class ArbitrageCard {
     
   }
 
+  set data(value) {
+        // set the latest value for _data BehaviorSubject
+        this._data.next(value);
+  };
+
   ngAfterViewInit() {
     console.log('ionViewDidLoad ArbitrageCard');
-    console.log(this.arbitrage);
   }
 
+  ngOnInit(){
+    console.log("Init");
+
+    this._data.subscribe(value => {
+      this.arbitrage = value;
+      console.log(this.arbitrage);
+    });
+  }
 }

@@ -21,8 +21,8 @@ export class ArbitrageService {
     return PAST_GAMES;
   }
 
-  public getFutureGames(): Arbitrage[] {
-    return FUTURE_GAMES;
+  public getFutureGames(): Promise<Arbitrage[]> {
+    return Promise.resolve(FUTURE_GAMES);
   }
 
 }

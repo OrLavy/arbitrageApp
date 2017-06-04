@@ -1,21 +1,25 @@
-import { Site } from "../common/models/Site";
+import { Site } from "../common/models/site";
 
 export const BET365 : Site = {
     name : "Bet 365",
-    url : ''
+    url : '',
+    image : ''
 }
 
 export const B_WIN : Site = {
     name : "B Win",
-    url : ''
+    url : '',
+    image : ''
 }
 
 export const BET_AWAY : Site = {
     name : "BetAway",
-    url : ''
+    url : '',
+    image : ''
 }
 
 export const BET_ONLINE : Site = {
     name : "Bet Online",
-    url : ''
+    url : '',
+    image : ''
 }

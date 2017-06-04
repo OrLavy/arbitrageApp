@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component , ChangeDetectionStrategy} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Arbitrage } from "../../common/models/arbitrage";
 import { ArbitrageService } from "../../providers/arbitrage-service";
-
+import * as moment from 'moment';
 /**
  * Generated class for the ArbitragePage page.
  *
@@ -13,13 +13,25 @@ import { ArbitrageService } from "../../providers/arbitrage-service";
 @Component({
   selector: 'page-arbitrage-page',
   templateUrl: 'arbitrage-page.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ArbitragePage {
 
-  public futureGames : Arbitrage[];
+  private arbitrages : Arbitrage[];
+  public todayGamesExist = false;
+  public todayGames : Arbitrage[];
+  public shortTermGames : Arbitrage[];
+  public longTermGames : Arbitrage[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public arbitrageService : ArbitrageService) {
-    this.futureGames = this.arbitrageService.getFutureGames();
+    this.arbitrageService.getFutureGames().then(arbitrages => this.divideIntoTimeframes(arbitrages));
+    // this.arbitrages = this.arbitrageService.getFutureGames();
+    // this.todayGames = this.arbitrageService.getFutureGames();    
+  }
+
+  divideIntoTimeframes (arbitrages : Arbitrage[]){
+      let today = moment(new Date());
+      this.todayGames = arbitrages;
   }
 
   ionViewDidLoad() {

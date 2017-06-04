@@ -14,7 +14,11 @@
 
 
 <ion-content padding>
-  <arbitrage-list [arbitrages]="futureGames">
+<!-- Today -->
 
+  <arbitrage-list [arbitrages]="todayGames" *ngIf="todayGames">
   </arbitrage-list>
+
+
+  
 </ion-content>

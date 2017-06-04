@@ -1,3 +1,10 @@
-page-arbitrage-card {
+arbitrage-card {
+    ion-card {
+        position: relative;
+        text-align: center;
+    }
 
+    .card-header {
+        padding : 0px;
+    }
 }
