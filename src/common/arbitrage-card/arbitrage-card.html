@@ -18,6 +18,16 @@
       <th class="col col-33">{{arbitrage.drawRatio}}</th>
       <th class="col col-33">{{arbitrage.awayRatio}}</th>
     </div>
+    <div class="row">
+      <th class="col col-33"><button ion-button (click)='openSite(arbitrage.homeRatioSite)'>Bet</button></th>
+      <th class="col col-33"><button ion-button (click)='openSite(arbitrage.drawRatioSite)'>Bet</button></th>
+      <th class="col col-33"><button ion-button (click)='openSite(arbitrage.awayRatioSite)'>Bet</button></th>
+    </div>
+
+    <div class="row">
+      <th class="col col-50"><button ion-button color='favorite' (click)='save(arbitrage)'>Save</button></th>
+      <th class="col col-50"><button ion-button color='danger' (click)='report(arbitrage)'>Report</button></th>
+    </div>
 
   </ion-card-content>
 </ion-card>

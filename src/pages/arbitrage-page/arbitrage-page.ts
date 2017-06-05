@@ -24,9 +24,7 @@ export class ArbitragePage {
   public longTermGames : Arbitrage[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public arbitrageService : ArbitrageService) {
-    this.arbitrageService.getFutureGames().then(arbitrages => this.divideIntoTimeframes(arbitrages));
-    // this.arbitrages = this.arbitrageService.getFutureGames();
-    // this.todayGames = this.arbitrageService.getFutureGames();    
+    this.arbitrageService.getFutureGames().then(arbitrages => this.divideIntoTimeframes(arbitrages));    
   }
 
   divideIntoTimeframes (arbitrages : Arbitrage[]){

@@ -11,7 +11,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { ArbitragePage } from '../pages/arbitrage-page/arbitrage-page';
 import { HistoryPage } from '../pages/history-page/history-page';
 import { SettingsPage } from '../pages/settings/settings';
-
+import { NativeStorage } from '@ionic-native/native-storage';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ArbitragePageModule } from "../pages/arbitrage-page/arbitrage-page.module";
@@ -47,6 +47,7 @@ import { ArbitrageService } from "../providers/arbitrage-service";
   providers: [
     StatusBar,
     SplashScreen,
+    NativeStorage,
     ArbitrageService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
